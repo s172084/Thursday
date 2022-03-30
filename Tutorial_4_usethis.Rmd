@@ -1,0 +1,134 @@
+---
+title: "Use this library"
+author: "Oriade Latifah Simpson"
+date: "30/03/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(usethis)
+```
+
+How to use the usethis package. 
+Source : <https://kbroman.org/AdvData/18_rpack_demo.html> 
+
+Create a data directory which stores the variables as data objects. 
+```{r}
+x <- 1
+y <- 2
+use_data(x, y)
+```
+
+
+```{r}
+# quickly modify the description of the project with my name inside the project. 
+use_mit_license("oriade simpson")
+```
+
+```{r}
+# use the ggplot2 package. 
+use_package("ggplot2", "Suggests")
+use_package("tidyverse", "Suggests")
+```
+
+```{r}
+#Turn this project into a git repository using usethis::use_git
+use_git()
+```
+
+I do a basic edit of the description file and push the changes to github. 
+Using stage > commit > comment > push. 
+
+
+Connect this package directlyy to my github repository and create a folder there online. 
+
+```{r}
+use_github()
+```
+
+This will create the repository at GitHub, push your materials there, and also change the DESCRIPTION file to include the GitHub URL.
+
+Stage, commit, and push the change to the DESCRIPTION file
+
+
+
+Add R functions from th R subdirectory. 
+use_r("simBrM")
+install()
+load_all()
+
+
+
+Add documentation 
+If you are already using roxygen2, but not with markdown, you'll need to use roxygen2md to convert existing Rd expressions to markdown. The conversion is not perfect, so make sure to check the results.
+```{r}
+?use_roxygen_md()
+```
+
+process thee documentation. 
+
+```{r}
+document()
+```
+
+***
+
+Add imports to the description file. 
+
+use_package("stats")
+use_package("graphics")
+
+
+***
+
+Add a ReadMe file for packages on GitHub because the ReadMe file that
+serves as sort of the home page for the software.
+
+The key things to include in the ReadMe are the purpose, how to install, and a bit about usage.
+
+**To create a Markdown-based ReadMe file**
+
+```{r}
+use_readme_md()
+```
+
+
+**Create an Rmarkdown-based ReadMe file**
+
+Many people are making R Markdown based ReadMe files for their R packages, 
+with working R code and graphs and such. 
+If you want to do that, look at use_readme_rmd().
+( The figures are saved in the man folder. )
+
+```{r}
+use_readme_rmd()
+```
+
+**Add a vignette**
+A vignette is a tutorial on how to use the package. 
+The vignettes are written to the vignettes folder. 
+
+```{r}
+# Create the vignette using the name of the vignette file and a description of the vignette. 
+use_vignette("simBrM", "Simulate Brownian motion")
+```
+
+```{r}
+#install the vignette with the package. 
+#install(build_vignettes=TRUE)
+
+#see the vignette listed with the package. 
+#vignette(package="simBrM")
+
+
+# open the vignette
+#vignette("simBrM")
+```
+
+
+

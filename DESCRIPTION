@@ -12,3 +12,5 @@ RoxygenNote: 7.1.2
 Suggests: 
     ggplot2,
     tidyverse
+URL: https://github.com/s172084/Thursday
+BugReports: https://github.com/s172084/Thursday/issues

@@ -1,0 +1,39 @@
+---
+title: "Untitled"
+author: "Oriade Latifah Simpson"
+date: "30/03/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(usethis)
+```
+
+
+```{r}
+# quickly modify the description of the project with my name inside the project. 
+use_mit_license("oriade simpson")
+```
+
+```{r}
+# use the ggplot2 package. 
+use_package("ggplot2", "Suggests")
+use_package("tidyverse", "Suggests")
+
+```
+
+```{r}
+x <- rnorm(100)
+y <- rnorm(100)
+
+
+ggplot2::ggplot(
+  data = diamonds, 
+  x = carat )+
+  ggplot2::geom_histogram(alpha = 0.5)
+```
+
